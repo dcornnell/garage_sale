@@ -1,7 +1,21 @@
-%h1= @sale_item.name
-%h3= @sale_item.description
-%h4= @sale_item.price
-%br
-has the item been sold?
-%br
-= @sale_item.sold
+
+
+
+%div.container
+	%div.nav-bar.nav-bar-inverse
+
+		%h1= @sale_item.name
+		-if @sale_item.sold == true
+			This item has been sold!
+		
+	%hr
+	%h4= @sale_item.description
+	%h3= "Price #{@sale_item.price}"
+	%br
+
+	
+	%a(href="sale_items/#{@sale_item.id}/edit")
+		%button.btn.btn-block.btn-success= "Edit"
+	%br
+	%a(href="sale_items/#{@sale_item.id}/delete")
+		%button.btn.btn-block.btn-danger= "Delete"
