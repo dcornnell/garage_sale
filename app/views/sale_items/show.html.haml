@@ -5,7 +5,7 @@
 	%div.nav-bar.nav-bar-inverse
 
 		%h1= @sale_item.name
-		-if @sale_item.sold == true
+		- if @sale_item.sold == true
 			This item has been sold!
 		
 	%hr
@@ -14,8 +14,8 @@
 	%br
 
 	
-	%a(href="sale_items/#{@sale_item.id}/edit")
+	%a(href="/sale_items/#{@sale_item.id}/edit")
 		%button.btn.btn-block.btn-success= "Edit"
 	%br
-	%a(href="sale_items/#{@sale_item.id}/delete")
+	%a(href="/sale_items/#{@sale_item.id}/delete")
 		%button.btn.btn-block.btn-danger= "Delete"

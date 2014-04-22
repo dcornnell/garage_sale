@@ -30,6 +30,12 @@ class SaleItemsController < ApplicationController
 			redirect_to "/sale_items"
 		end
 	end
+
+	def destroy
+		@sale_item = SaleItem.find(params[:id])
+		@sale_item.delete
+			redirect_to "/sale_items"
+	end
 	private
 
 	def sale_item_params
