@@ -1,0 +1,18 @@
+
+%div.container
+  -@sale_items.each do |si|
+    -if si.sold == true
+      %a(href="sale_items/#{si.id}")
+        %button.btn.btn-block.btn-danger
+          = "#{si.name} $#{si.price}"
+          %span.glyphicon.glyphicon-remove
+      %br
+    -else
+      %a(href="sale_items/#{si.id}")
+        %button.btn.btn-block.btn-default= "#{si.name} $#{si.price}"
+      %br
+
+
+  
+    
+
