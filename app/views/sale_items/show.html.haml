@@ -17,5 +17,5 @@
 	%a(href="/sale_items/#{@sale_item.id}/edit")
 		%button.btn.btn-block.btn-success= "Edit"
 	%br
-	%a(href="/sale_items/#{@sale_item.id}/delete")
-		%button.btn.btn-block.btn-danger= "Delete"
+	%button.btn.btn-block.btn-danger
+		= link_to "Delete" , sale_item_path, method: "delete"

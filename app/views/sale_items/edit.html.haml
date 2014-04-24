@@ -1,2 +1,3 @@
-= form_for @sale_item, url: "/sale_items/#{@sale_item.id}" do |f|
-	=render "form", f: f
+%div.container
+	= form_for @sale_item, url: "/sale_items/#{@sale_item.id}" do |f|
+		=render "form", f: f
