@@ -12,6 +12,10 @@
 	%h4= @sale_item.description
 	%h3= "Price #{@sale_item.price}"
 	%br
+	.btn.btn-block.btn-default
+		= link_to "Change Sold Status",
+			change_sold_status_sale_item_path, method: 'patch'
+	%br
 
 	
 	%a(href="/sale_items/#{@sale_item.id}/edit")

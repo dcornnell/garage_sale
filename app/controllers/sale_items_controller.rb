@@ -36,6 +36,19 @@ class SaleItemsController < ApplicationController
 		@sale_item.delete
 			redirect_to "/sale_items"
 	end
+
+
+	def change_sold_status
+		@sale_item = SaleItem.find(params[:id])
+		if @sale_item.sold 
+			val = false
+		else
+			val = true
+		end
+		@sale_item.update_attributes(:sold => val)
+		redirect_to sale_item_path
+	end
+	
 	private
 
 	def sale_item_params
